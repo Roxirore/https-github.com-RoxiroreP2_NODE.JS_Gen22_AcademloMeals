@@ -18,11 +18,11 @@ const initModel = () => {
   Meal.belongsTo(Restaurant, { foreingKey: 'restaurantId' });
 
   // un meal puede tener una order
-  Meal.hasMany(Order, { foreingKey: 'mealId' });
+  Meal.hasOne(Order, { foreingKey: 'mealId' });
   Order.belongsTo(Meal, { foreingKey: 'mealId' });
 
   // un user puede tener una order
-  User.hasMany(Order, { foreingKey: 'userId' });
+  User.hasOne(Order, { foreingKey: 'userId' });
   Order.belongsTo(User, { foreingKey: 'userId' });
 };
 
